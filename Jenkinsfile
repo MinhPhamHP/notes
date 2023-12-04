@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('build'){
             steps {
-                git 'https://github.com/MinhPhamHP/test-jenkinsfile-1.git'                
+                dir('/var/lib/jenkins/workspace/5_test-pipeline-1_master') {
+                git 'https://github.com/MinhPhamHP/test-jenkinsfile-1.git'   
+               }             
             }
-            }
-        }
-
+         }
     }
+}
