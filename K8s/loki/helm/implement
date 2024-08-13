@@ -1,0 +1,5 @@
+helm upgrade --install loki --namespace=loki-stack --values=values.yaml grafana/loki-stack
+helm upgrade --install loki  grafana/loki-stack --set resources.requests.cpu=100m --set resources.requests.memory=128Mi -f gptprom.yaml
+helm show values grafana/loki-stack
+kubectl port-forward --namespace loki-stack service/loki-grafana 3000:80
+kubectl get secret --namespace loki-stack loki-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo

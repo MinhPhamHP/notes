@@ -1,0 +1,5 @@
+c:\>regedit.exe
+
+Browse to HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
+
+copy UninstallString, run in cmd

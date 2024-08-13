@@ -1,0 +1,16 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL    604800
+@       IN      SOA     vsphere.local. root.vsphere.local. (
+                              3         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      bind.vsphere.local.
+bind    IN      A       192.168.40.48
+48      IN      PTR     bind.vsphere.local
+47      IN      PTR     web.vsphere.local
+46      IN      PTR     client.vsphere.local

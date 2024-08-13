@@ -1,0 +1,342 @@
+HNLT0177
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-F7   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F5-FC   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}  
+HNLT0180
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-FD   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E0-DF   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0170
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-C5   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AF-91-4B   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0175
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-B8   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-9D   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0145
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4A-4C   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F5-CF   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0158
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-FC   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-ED   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0181
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-DA   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-66   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0183
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-B9   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-4D   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0167
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4F-0B   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-EE-72   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0184
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-E3   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-98   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0164
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-D7   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E0-D5   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0148
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-BD   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-C0   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0136
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-CE   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-48   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0163
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4A-46   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F5-CA   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0153
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-D9   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-8E   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0171
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4D-68   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F5-DE   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0186
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-F5   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-F7   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0140
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-A4   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-CF-CD   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0143
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-F8   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E2-01   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0160
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-AF   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-E3   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0147
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-E2   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-93   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0165
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-CC   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E2-4C   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0135
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-AE   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E2-56   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0185
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-F4   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-75   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0131
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-D8   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AE-1A-00   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0144
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-E4   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E2-06   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0168
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-DD   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-DE-D2   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0152
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-F6   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F6-E2   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0162
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-E9   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E2-60   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0166
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4A-47   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F5-E8   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0155
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4D-65   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F6-DD   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0172
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-DB   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-7F   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0142
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-C4   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-CF-37   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0146
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-CD   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E2-FB   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0179
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4D-61   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F6-0B   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0139
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4B-22   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F5-D4   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0161
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4D-2D   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-A6-F0-4A   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0132
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-F9   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E2-38   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0174
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-C0   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-DE-DC   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0156
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-F1   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-6B   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0138
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4F-0D   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F6-92   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0173
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-EA   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F6-7E   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0134
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4D-48   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AE-1A-5F   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0169
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-DC   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-CF-32   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0159
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-CF   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-C5   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0133
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-E5   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E2-5B   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0188
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-D4   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-D9   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0149
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-E8   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E0-B2   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0178
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-F0   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-70   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0187
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-A5   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-B6   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0151
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-BE   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-DF-8B   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0157
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-BF   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-DF-72   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0137
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4F-0A   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F5-C5   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0176
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4D-85   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-A6-EF-FA   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0154
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4A-56   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AD-F6-B5   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0141
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4D-7B   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-AE-1A-87   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      
+HNLT0182
+
+Connection Name Network Adapter Physical Address    Transport Name                                            
+=============== =============== =================== ==========================================================
+Ethernet        Intel(R) Ethern 28-00-AF-4A-4E-D6   Media disconnected                                        
+Wi-Fi           Intel(R) Wi-Fi  A0-B3-39-30-E1-5C   \Device\Tcpip_{7CFC4977-0310-4554-AE66-768D0318A5DB}      

@@ -1,0 +1,1 @@
+Import-Csv -Path "MacAddressFilters.csv" | Add-DhcpServerv4Filter -ComputerName "n-ntd-hn01.nttdata.com.vn" -List Allow

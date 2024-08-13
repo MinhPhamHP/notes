@@ -1,0 +1,108 @@
+# config static IP
+
+vi /etc/sysconfig/network-scripts/ifcfg-ens18
+DEVICE=eth0
+NAME=eth0
+HWADDR=56:7E:FF:47:E8:BB
+UUID=41171a6f-bce1-44de-8a6e-cf5e782f8bd6
+ONBOOT=yes
+TYPE=Ethernet
+BOOTPROTO=static
+IPV4_FAILURE_FATAL=no
+IPV6INIT=no
+DEFROUTE=yes
+IPADDR=192.168.40.60
+PREFIX=24
+GATEWAY=192.168.40.254
+DNS1=192.168.8.6
+DNS2=192.168.8.1
+
+#almalinux
+[root@localhost ~]# hostnamectl set-hostname dlp.srv.world
+# display devices
+[root@localhost ~]# nmcli device
+
+# set IPv4 address
+[root@localhost ~]# nmcli connection modify enp1s0 ipv4.addresses 10.0.0.30/24
+# set gateway
+[root@localhost ~]# nmcli connection modify enp1s0 ipv4.gateway 10.0.0.1
+# set DNS
+# for multiple DNS, specify with space separated ⇒ ipv4.dns "10.0.0.10 10.0.0.11 10.0.0.12"
+[root@localhost ~]# nmcli connection modify enp1s0 ipv4.dns 10.0.0.10
+# set DNS search base (your domain name -for multiple one, specify with space separated)
+[root@localhost ~]# nmcli connection modify enp1s0 ipv4.dns-search srv.world
+# set [manual] for static setting (it's [auto] for DHCP)
+[root@localhost ~]# nmcli connection modify enp1s0 ipv4.method manual
+# restart the interface to reload settings
+[root@localhost ~]# nmcli connection down enp1s0; nmcli connection up enp1s0
+Connection 'enp1s0' successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/1)
+Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/2)
+config auto connect
+
+# confirm settings
+[root@localhost ~]# nmcli device show enp1s0
+
+#centos 7
+systemctl restart network
+#centos 6.8
+/etc/rc.d/init.d/network restart
+
+
+# view proxy 
+echo $http_proxy
+
+#For http,https,ftp
+vi /etc/profile
+
+PROXY_URL="http://tempvnhn:VNHNgL5P@192.168.5.254:8080/"
+export http_proxy="$PROXY_URL"
+export https_proxy="$PROXY_URL"
+export ftp_proxy="$PROXY_URL"
+export no_proxy="127.0.0.1,localhost,192.168.8.*,192.168.9.*,192.168.40.*,192.168.100.*"
+
+export HTTP_PROXY="$PROXY_URL"
+export HTTPS_PROXY="$PROXY_URL"
+export FTP_PROXY="$PROXY_URL"
+export NO_PROXY="127.0.0.1,localhost,192.168.8.*,192.168.9.*,192.168.40.*,192.168.100.*"
+
+#export http_proxy="http://tempvnhn:VNHNgL5P@192.168.5.254:8080/"
+#export https_proxy="http://tempvnhn:VNHNgL5P@192.168.5.254:8080/"
+#export fpt_proxy="http://tempvnhn:VNHNgL5P@192.168.5.254:8080/"
+#export no_proxy="127.0.0.1,localhost"
+
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+
+#For yum
+vi /etc/yum.conf
+proxy=http://192.168.5.254:8080/
+proxy_username=tempvnhn
+proxy_password=VNHNgL5P
+
+# How to check CentOS version
+cat /etc/centos-release
+cat /etc/*elease
+
+# Set a New Static Hostname
+hostnamectl set-hostname Cent79.Mcafee.WMS
+
+#disable firewall almalinux 9
+sudo systemctl disable firewalld
+
+#change timezone
+timedatectl set-timezone Asia/Ho_Chi_Minh
+
+#view package installed
+yum list installed | grep falcon
+
+#remove package installed
+yum autoremove [package name]
+
+# install
+yum install -y falcon-sensor-7.05.0-16004.el7.x86_64.rpm
+
+# install tomcat
+sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
+
+# delete user
+# userdel -f -r redhat-user

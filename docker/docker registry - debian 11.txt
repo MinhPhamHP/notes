@@ -1,0 +1,69 @@
+_ proxy docker container
+~/.docker/config.json
+{
+ "proxies":
+ {
+   "default":
+   {
+     "httpProxy": "http://tempvnhn:VNHNgL5P@192.168.5.254:8080/",
+     "httpsProxy": "http://tempvnhn:VNHNgL5P@192.168.5.254:8080/",
+     "noProxy": "127.0.0.0/8,localhost,192.168.40.0/24,192.168.8.0/23"
+   }
+ }
+}
+
+_ proxy docker daemon
+sudo mkdir -p /etc/systemd/system/docker.service.d
+sudo vi /etc/systemd/system/docker.service.d/proxy.conf
+
+[Service]
+Environment="HTTP_PROXY=http://tempvnhn:VNHNgL5P@192.168.5.254:8080/"
+Environment="HTTPS_PROXY=http://tempvnhn:VNHNgL5P@192.168.5.254:8080/"
+Environment="NO_PROXY="localhost,127.0.0.1,192.168.40.0/24,192.168.8.0/23,::1"
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker.service
+
+_docker engine server trust Certs
+nano /etc/docker/daemon.json
+
+{
+  "insecure-registries" : ["https://192.168.40.215:443"]
+}
+
+mkdir /etc/docker/certs.d/192.168.40.215:443
+cp /root/domain.crt /root/domain.key /root/rootCA.crt /etc/docker/certs.d/192.168.40.215:443/
+cp /root/domain.crt /root/rootCA.crt /usr/local/share/ca-certificates/
+update-ca-certificates
+/sbin/init 6
+_docker engine client trust Certs
+
+#Linux
+nano /etc/docker/daemon.json
+
+{
+  "insecure-registries" : ["https://192.168.40.215:443"]
+}
+
+mkdir /etc/docker/certs.d/192.168.40.215:443
+cp /root/domain.crt /root/domain.key /root/rootCA.crt /etc/docker/certs.d/192.168.40.215:443/
+cp /root/domain.crt /root/rootCA.crt /usr/local/share/ca-certificates/
+update-ca-certificates
+/sbin/init 6
+
+#Windows
+Install domain.crt, rootCA.crt -> Local Machine -> Trusted Root Certification Authorities
+Reboot windows
+
+#handle registry
+#view images in registry
+curl https://192.168.40.215/v2/_catalog
+#delete image in registry
+docker image remove 192.168.40.215:443/my-ubuntu
+
+docker tag httpd 192.168.40.215:443/httpd
+docker push 192.168.40.215:443/httpd
+docker pull 192.168.40.215:443/httpd
+
+docker run -d   --restart=always   --name registry   -v "$(pwd)"/certs:/certs   -e REGISTRY_HTTP_ADDR=0.0.0.0:443   -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt   -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key   -p 443:443   registry:2
+

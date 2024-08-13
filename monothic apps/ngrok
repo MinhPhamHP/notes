@@ -1,0 +1,7 @@
+ngrok
+before_u_go matkhau@12
+
+docker run --net=host -it -e NGROK_AUTHTOKEN=2Z1Lia7aGvQiFplU0a7GZ4Ozfel_6Ed9sWM42mjUpo3rVhGRv ngrok/ngrok:latest http 8080
+https://7435-113-22-85-252.ngrok-free.app
+
+sudo docker pull khoanguyen1507/ansible-host-image:develop

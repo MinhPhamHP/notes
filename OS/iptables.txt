@@ -1,0 +1,46 @@
+#test pc
+192.168.8.62
+192.168.8.37
+
+iptables -L -v
+
+# Change policy
+iptables -P INPUT DROP
+iptables -P INPUT ACCEPT
+
+# Delele all rule
+iptables -F
+
+# Append rule to chain, thêm tham số theo thứ tự cột, nếu không sẽ không nhận, nên dùng -I INPUT {line}
+iptables -A INPUT -j ACCEPT
+iptables -A INPUT -p tcp -i eth0 -s 14.160.3.18 --dport 22 -j ACCEPT
+iptables -A INPUT -p icmp -i eth0 -s 192.168.8.221 -j ACCEPT
+
+#1
+iptables -I ALLOWIN 1 -p all -i eth+ -s 14.160.3.18 -j ACCEPT
+iptables -I ALLOWOUT 1 -p all -o eth+ -d 14.160.3.18 -j ACCEPT
+
+iptables -I ALLOWIN 1 -p all -i eth+ -s 45.76.154.51 -j ACCEPT
+iptables -I ALLOWOUT 1 -p all -o eth+ -d 45.76.154.51 -j ACCEPT
+
+#2
+iptables -I INPUT 1 -p all -i eth+ -s 14.160.3.18 -j ACCEPT
+iptables -I INPUT 1 -p all -i eth+ -s 45.76.154.51 -j ACCEPT
+
+# Delete rule on chain
+iptables -D INPUT 1
+
+# Save config
+iptables-save | sudo tee /etc/sysconfig/iptables
+service iptables save
+
+service iptables restart
+
+# For log
+iptables -N LOGGING
+iptables -A INPUT -j LOGGING
+iptables -A LOGGING -m limit --limit 2/min -j LOG --log-prefix "IPTables-Dropped: " --log-level 4
+iptables -A LOGGING -j DROP
+
+#view logs
+/var/log/messages

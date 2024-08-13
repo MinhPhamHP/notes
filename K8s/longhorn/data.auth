@@ -1,0 +1,1 @@
+$ USER=<minhpv>; PASSWORD=<congachoi>; echo "${USER}:$(openssl passwd -stdin -apr1 <<< ${PASSWORD})" >> auth

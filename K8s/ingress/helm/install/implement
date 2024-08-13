@@ -1,0 +1,4 @@
+kubectl create namespace ingress-nginx
+helm install nginx-ingress ingress-nginx/ingress-nginx -n ingress-nginx -f values.yaml
+kubectl get pods -n ingress-nginx
+kubectl get svc -n ingress-nginx

@@ -1,0 +1,47 @@
+_config static ip + dns
+sudo nano /etc/network/interfaces
+allow-hotplug eth0
+iface eth0 inet static
+address 192.168.40.213
+netmask 255.255.255.0
+gateway 192.168.40.254
+dns-domain docker.local
+dns-nameservers 192.168.8.6
+
+nano /etc/resolv.conf
+nameserver 192.168.8.6
+
+_sudo vim /etc/profile.d/proxy.sh
+
+# set proxy config via profie.d - should apply for all users
+# http/https/ftp/no_proxy
+export http_proxy="http://tempvnhn:VNHNgL5P@192.168.5.254:8080/"
+export https_proxy="http://tempvnhn:VNHNgL5P@192.168.5.254:8080/"
+export ftp_proxy="http://tempvnhn:VNHNgL5P@192.168.5.254:8080/"
+export no_proxy="127.0.0.1,localhost,192.168.40.213"
+
+sudo chmod +x /etc/profile.d/proxy.sh
+logout
+source /etc/profile.d/proxy.sh
+env | grep -i proxy
+
+
+
+root@registry2:/etc/apt# cat sources.list
+# deb cdrom:[Debian GNU/Linux 11.6.0 _Bullseye_ - Official amd64 NETINST 20221217-10:42]/ bullseye main
+
+# deb cdrom:[Debian GNU/Linux 11.6.0 _Bullseye_ - Official amd64 NETINST 20221217-10:42]/ bullseye main
+
+deb http://security.debian.org/debian-security bullseye-security main
+deb http://deb.debian.org/debian/ bullseye main
+# Line commented out by installer because it failed to verify:
+# deb-src http://security.debian.org/debian-security bullseye-security main
+
+# bullseye-updates, to get updates before a point release is made;
+# see https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backports
+# A network mirror was not selected during install.  The following entries
+# are provided as examples, but you should amend them as appropriate
+# for your mirror of choice.
+#
+deb http://deb.debian.org/debian/ bullseye-updates main
+# deb-src http://deb.debian.org/debian/ bullseye-updates main

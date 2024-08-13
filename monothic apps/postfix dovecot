@@ -1,0 +1,146 @@
+sudo apt -y install postfix sasl2-bin
+sudo cp /usr/share/postfix/main.cf.dist /etc/postfix/main.cf
+sudo vi /etc/postfix/main.cf
+    # line 78 : uncomment
+    mail_owner = postfix
+
+    # line 94 : uncomment and specify hostname
+    myhostname = mail.nttdata.com.vn
+
+    # line 102 : uncomment and specify domainname
+    mydomain = intra.nttdata.com.vn
+
+    # line 123 : uncomment
+    myorigin = $mydomain
+
+    # line 137 : uncomment
+    inet_interfaces = all
+
+    # line 185 : uncomment
+    mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+
+    # line 228 : uncomment
+    local_recipient_maps = unix:passwd.byname $alias_maps
+
+    # line 270 : uncomment
+    mynetworks_style = subnet
+
+    # line 287 : add your local network
+    mynetworks = 192.168.8.0/23, 192.168.40.0/24
+
+    # line 407 : uncomment
+    alias_maps = hash:/etc/aliases
+
+    # line 418 : uncomment
+    alias_database = hash:/etc/aliases
+
+    # line 440 : uncomment
+    home_mailbox = Maildir/
+
+    # line 576: comment out and add
+    #smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
+    smtpd_banner = $myhostname ESMTP
+
+    # line 650 : add
+    sendmail_path = /usr/sbin/postfix
+
+    # line 655 : add
+    newaliases_path = /usr/bin/newaliases
+
+    # line 660 : add
+    mailq_path = /usr/bin/mailq
+
+    # line 666 : add
+    setgid_group = postdrop
+
+    # line 670 : comment out
+    #html_directory =
+
+    # line 674 : comment out
+    #manpage_directory =
+
+    # line 679 : comment out
+    #sample_directory =
+
+    # line 683 : comment out
+    #readme_directory =
+
+    # line 684 : if also listen IPv6, change to [all]
+    inet_protocols = ipv4
+
+    # add follows to the end
+    # disable SMTP VRFY command
+    disable_vrfy_command = yes
+
+    # require HELO command to sender hosts
+    smtpd_helo_required = yes
+
+    # limit an email size
+    # example below means 10M bytes limit
+    message_size_limit = 10240000
+
+    # SMTP-Auth settings
+    smtpd_sasl_type = dovecot
+    smtpd_sasl_path = private/auth
+    smtpd_sasl_auth_enable = yes
+    smtpd_sasl_security_options = noanonymous
+    smtpd_sasl_local_domain = $myhostname
+    smtpd_recipient_restrictions = permit_mynetworks, permit_auth_destination, permit_sasl_authenticated, reject
+
+sudo newaliases
+sudo systemctl restart postfix
+sudo vi /etc/postfix/main.cf
+    # add to the end
+    # reject unknown clients that forward lookup and reverse lookup of their hostnames on DNS do not match
+    smtpd_client_restrictions = permit_mynetworks, reject_unknown_client_hostname, permit
+
+    # rejects senders that domain name set in FROM are not registered in DNS or 
+    # not registered with FQDN
+    smtpd_sender_restrictions = permit_mynetworks, reject_unknown_sender_domain, reject_non_fqdn_sender
+
+    # reject hosts that domain name set in FROM are not registered in DNS or 
+    # not registered with FQDN when your SMTP server receives HELO command
+    smtpd_helo_restrictions = permit_mynetworks, reject_unknown_hostname, reject_non_fqdn_hostname, reject_invalid_hostname, permit
+
+sudo systemctl restart postfix
+
+# Dovecot
+sudo apt -y install dovecot-core dovecot-pop3d dovecot-imapd
+sudo vi /etc/dovecot/dovecot.conf
+
+# Add Mail User Accounts
+sudo apt -y install mailutils
+sudo echo 'export MAIL=$HOME/Maildir/' >> /etc/profile.d/mail.sh
+
+# Config SSL/TLS
+sudo vi /etc/postfix/main.cf
+    # add to the end
+    smtpd_use_tls = yes
+    smtp_tls_mandatory_protocols = !SSLv2, !SSLv3
+    smtpd_tls_mandatory_protocols = !SSLv2, !SSLv3
+    smtpd_tls_cert_file = /etc/ssl/mail.srv.crt
+    smtpd_tls_key_file = /etc/ssl/mail.srv.key
+    smtpd_tls_security_level = may
+    smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+
+sudo vi /etc/postfix/master.cf
+    # line 19, 20,21, 22 : uncomment
+    submission inet n       -       y       -       -       smtpd
+    -o syslog_name=postfix/submission
+    -o smtpd_tls_security_level=encrypt
+    -o smtpd_sasl_auth_enable=yes
+
+    # line 33-36 : uncomment
+    smtps     inet  n       -       y       -       -       smtpd
+    -o syslog_name=postfix/smtps
+    -o smtpd_tls_wrappermode=yes
+    -o smtpd_sasl_auth_enable=yes
+
+sudo vi /etc/dovecot/conf.d/10-ssl.conf
+    # line 6 : change
+    ssl = yes
+    # line 12,13 : uncomment and specify certificates
+    ssl_cert = </etc/ssl/mail.srv.crt
+    ssl_key = </etc/ssl/mail.srv.key
+
+sudo systemctl restart postfix dovecot

@@ -1,0 +1,38 @@
+First name,Last name,Display name,User logon name,User principal name,Office,E-mail,Account status
+Kawakita,Ryosuke ,Ryosuke Kawakita,ryosukek,ryosukek@intra.nttdata.com.vn,Ha Noi,ryosukek@intra.nttdata.com.vn,Enabled
+Saito,Taiki ,Taiki Saito,taikis,taikis@intra.nttdata.com.vn,Ha Noi,taikis@intra.nttdata.com.vn,Enabled
+Sonogashira,Koji ,Koji Sonogashira,kojis,kojis@intra.nttdata.com.vn,Ha Noi,kojis@intra.nttdata.com.vn,Enabled
+Yamagishi,Seiya ,Seiya Yamagishi,seiyay,seiyay@intra.nttdata.com.vn,Ha Noi,seiyay@intra.nttdata.com.vn,Enabled
+Hung,Pham Quoc ,Pham Quoc Hung,hungpq,hungpq@intra.nttdata.com.vn,Ha Noi,hungpq@intra.nttdata.com.vn,Enabled
+Loi,Duong Van ,Duong Van Loi,loidv,loidv@intra.nttdata.com.vn,Ha Noi,loidv@intra.nttdata.com.vn,Enabled
+Thang,Bui Le ,Bui Le Thang,thangbl,thangbl@intra.nttdata.com.vn,Ha Noi,thangbl@intra.nttdata.com.vn,Enabled
+Son,Hoang Thanh ,Hoang Thanh Son,sonht,sonht@intra.nttdata.com.vn,Ha Noi,sonht@intra.nttdata.com.vn,Enabled
+Giang,Nguyen Thi Huong ,Nguyen Thi Huong Giang,giangnth,giangnth@intra.nttdata.com.vn,Ha Noi,giangnth@intra.nttdata.com.vn,Enabled
+Minh,Nguyen Vu ,Nguyen Vu Minh,minhnv,minhnv@intra.nttdata.com.vn,Ha Noi,minhnv@intra.nttdata.com.vn,Enabled
+Cuong,Do Trong ,Do Trong Cuong,cuongdt,cuongdt@intra.nttdata.com.vn,Ha Noi,cuongdt@intra.nttdata.com.vn,Enabled
+Hoa,Nguyen Thi Ngoc ,Nguyen Thi Ngoc Hoa,hoantn,hoantn@intra.nttdata.com.vn,Ha Noi,hoantn@intra.nttdata.com.vn,Enabled
+Huong,Bui Thi Thanh ,Bui Thi Thanh Huong,huongbtt,huongbtt@intra.nttdata.com.vn,Ha Noi,huongbtt@intra.nttdata.com.vn,Enabled
+Hoang,Pham Duc ,Pham Duc Hoang,hoangpd,hoangpd@intra.nttdata.com.vn,Ha Noi,hoangpd@intra.nttdata.com.vn,Enabled
+Chi,Hoang Thi Huyen ,Hoang Thi Huyen Chi,chihth,chihth@intra.nttdata.com.vn,Ha Noi,chihth@intra.nttdata.com.vn,Enabled
+Hoang,Nguyen Quoc ,Nguyen Quoc Hoang,hoangnq,hoangnq@intra.nttdata.com.vn,Ha Noi,hoangnq@intra.nttdata.com.vn,Enabled
+Ngoc,Nguyen Bich ,Nguyen Bich Ngoc,ngocnb,ngocnb@intra.nttdata.com.vn,Ha Noi,ngocnb@intra.nttdata.com.vn,Enabled
+Thanh,Do Van ,Do Van Thanh,thanhdv,thanhdv@intra.nttdata.com.vn,Ha Noi,thanhdv@intra.nttdata.com.vn,Enabled
+Hai,Nguyen Vu ,Nguyen Vu Hai,hainv,hainv@intra.nttdata.com.vn,Ha Noi,hainv@intra.nttdata.com.vn,Enabled
+Ha,Le Thi Thu ,Le Thi Thu Ha,haltt,haltt@intra.nttdata.com.vn,Ha Noi,haltt@intra.nttdata.com.vn,Enabled
+Trang,Bui Thi Huyen ,Bui Thi Huyen Trang,trangbth,trangbth@intra.nttdata.com.vn,Ha Noi,trangbth@intra.nttdata.com.vn,Enabled
+Nga,Nguyen Thi Thuy ,Nguyen Thi Thuy Nga,ngantt,ngantt@intra.nttdata.com.vn,Ha Noi,ngantt@intra.nttdata.com.vn,Enabled
+Sugasawa,Yurika ,Yurika Sugasawa,yurikas,yurikas@intra.nttdata.com.vn,Ha Noi,yurikas@intra.nttdata.com.vn,Enabled
+Toan,Luu Trung ,Luu Trung Toan,toanlt,toanlt@intra.nttdata.com.vn,Ha Noi,toanlt@intra.nttdata.com.vn,Enabled
+Tuan,Le Thanh ,Le Thanh Tuan,tuanlt,tuanlt@intra.nttdata.com.vn,Ha Noi,tuanlt@intra.nttdata.com.vn,Enabled
+Thao,Le Phuong ,Le Phuong Thao,thaolp,thaolp@intra.nttdata.com.vn,Ha Noi,thaolp@intra.nttdata.com.vn,Enabled
+Huyen,Tran Thu ,Tran Thu Huyen,huyentt,huyentt@intra.nttdata.com.vn,Ha Noi,huyentt@intra.nttdata.com.vn,Enabled
+Trang,Nguyen Quynh ,Nguyen Quynh Trang,trangnq,trangnq@intra.nttdata.com.vn,Ha Noi,trangnq@intra.nttdata.com.vn,Enabled
+Khoa,Mai Dang ,Mai Dang Khoa,khoamd,khoamd@intra.nttdata.com.vn,Ha Noi,khoamd@intra.nttdata.com.vn,Enabled
+Dung,Ngo Hong ,Ngo Hong Dung,dungnh,dungnh@intra.nttdata.com.vn,Ha Noi,dungnh@intra.nttdata.com.vn,Enabled
+Xuan,Bui Thanh ,Bui Thanh Xuan,xuanbt,xuanbt@intra.nttdata.com.vn,Ha Noi,xuanbt@intra.nttdata.com.vn,Enabled
+Tuyen,Nguyen Huu ,Nguyen Huu Tuyen,tuyennh,tuyennh@intra.nttdata.com.vn,Ha Noi,tuyennh@intra.nttdata.com.vn,Enabled
+Ba,Pham Ngoc ,Pham Ngoc Ba,bapn,bapn@intra.nttdata.com.vn,Ha Noi,bapn@intra.nttdata.com.vn,Enabled
+Tu,Hoang ,Hoang Tu,tuh,tuh@intra.nttdata.com.vn,Ha Noi,tuh@intra.nttdata.com.vn,Enabled
+Lan,Le Thi ,Le Thi Lan,lanlt,lanlt@intra.nttdata.com.vn,Ha Noi,lanlt@intra.nttdata.com.vn,Enabled
+Khanh,Vo Thu ,Vo Thu Khanh,khanhvt,khanhvt@intra.nttdata.com.vn,Ha Noi,khanhvt@intra.nttdata.com.vn,Enabled
+Bien,Ha Quang ,Ha Quang Bien,bienhq,bienhq@intra.nttdata.com.vn,Ha Noi,bienhq@intra.nttdata.com.vn,Enabled

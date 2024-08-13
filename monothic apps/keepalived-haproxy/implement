@@ -1,0 +1,81 @@
+sudo apt install keepalived
+vrrp_script haproxy-check {
+    script "killall -0 haproxy"
+    interval 2
+    weight 10
+}
+
+vrrp_instance kubernetes {
+    state MASTER
+    priority 100
+    interface eth0
+    virtual_router_id 61
+    advert_int 2
+    authentication {
+        auth_type AH
+        auth_pass viettq
+    }
+    virtual_ipaddress {
+        10.10.2.25/24
+    }
+
+    track_script {
+        haproxy-check
+    }
+}
+
+vrrp_script haproxy-check {
+    script "killall -0 haproxy"
+    interval 2
+    weight 10
+}
+
+vrrp_instance kubernetes {
+    state BACKUP
+    priority 99
+    interface eth0
+    virtual_router_id 61
+    advert_int 2
+    authentication {
+        auth_type AH
+        auth_pass viettq
+    }
+    virtual_ipaddress {
+        10.10.2.25/24
+    }
+
+    track_script {
+        haproxy-check
+    }
+}
+
+systemctl start keepalived
+systemctl enable keepalived
+
+sudo apt -y install haproxy
+#config in all haproxy node
+sudo nano haproxy.conf
+
+listen stats
+    bind *:8085
+    stats enable
+    stats uri /stats
+    stats realm HAProxy-04\ Statistics
+    stats auth admin:password
+    stats admin if TRUE
+
+frontend http-in
+    # listen on 80 port
+    bind *:80
+    # set default backend
+    default_backend    backend_servers
+    # send X-Forwarded-For header
+    option             forwardfor
+
+# define backend
+backend backend_servers
+    # balance with roundrobin
+    balance            roundrobin
+    # define backend servers
+    server             workernode 10.10.2.31:30080 check
+    server             workernode2 10.10.2.32:30080 check

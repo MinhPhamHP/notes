@@ -1,0 +1,72 @@
+sudo apt update -y && apt upgrade -y
+sudo apt install bind9 bind9utils bind9-doc -y
+sudo systemctl status bind9
+sudo systemctl restart bind9
+sudo nano /etc/bind/named.conf.options
+  // allow only LAN traffic from 192.168.2.0-192.168.2.255
+  acl LAN {
+  192.168.40.0/24;
+  192.168.8.0/23;
+  };
+  options {
+          directory "/var/cache/bind"; // default directory
+          allow-query { localhost; LAN; }; // allow queries from localhost and 192.168.2.0-192.168.2.255
+          forwarders { 8.8.8.8; }; // use CloudFlare 1.1.1.1 DNS as a forwarder
+          recursion yes;  // allow recursive queries
+  };
+named-checkconf /etc/bind/named.conf.options
+
+sudo nano /etc/bind/named.conf.local
+  zone "nttdata.com.vn" IN {
+          type master;
+          file "/etc/bind/zones/nttdata.com.vn";
+  };
+  zone "40.168.192.in-addr.arpa" IN {
+          type master;
+          file "/etc/bind/zones/40.168.192.in-addr.arpa";
+  };
+named-checkconf /etc/bind/named.conf.local
+
+sudo mkdir /etc/bind/zones
+sudo cp /etc/bind/db.local /etc/bind/zones/nttdata.com.vn
+  $TTL    604800
+  ; SOA record with MNAME and RNAME updated
+  @       IN      SOA     nttdata.com.vn. root.nttdata.com.vn. (
+                                3         ; Serial Note: increment after each change
+                          604800         ; Refresh
+                            86400         ; Retry
+                          2419200         ; Expire
+                          604800 )       ; Negative Cache TTL
+  ; Name server record 
+  @       IN      NS      bind.nttdata.com.vn.
+  ; A record for name server
+  bind      IN      A       192.168.40.47
+  ; A record for clients
+  mail      IN      A       192.168.40.46
+named-checkzone nttdata.com.vn /etc/bind/zones/nttdata.com.vn
+
+sudo cp /etc/bind/db.127 /etc/bind/zones/40.168.192.in-addr.arpa
+sudo nano /etc/bind/zones/40.168.192.in-addr.arpa
+  $TTL    604800
+  ; SOA record with MNAME and RNAME updated
+  @       IN      SOA     nttdata.com.vn. root.nttdata.com.vn. (
+                                3         ; Serial Note: increment after each change
+                          604800         ; Refresh
+                            86400         ; Retry
+                          2419200         ; Expire
+                          604800 )       ; Negative Cache TTL
+  ; Name server record 
+  @       IN      NS      bind.nttdata.com.vn.
+  ; A record for name server
+  bind      IN      A       192.168.40.47
+  ; PTR record for name server
+  47   IN      PTR     bind.nttdata.com.vn
+  ; PTR record for clients
+  46   IN      PTR     mail.nttdata.com.vn
+named-checkzone nttdata.com.vn /etc/bind/zones/40.168.192.in-addr.arpa
+sudo systemctl restart bind9
+//Test command
+  nslookup mail
+  nslookup bind
+  nslookup mail.nttdata.com.vn
+  nslookup bind.nttdata.com.vn

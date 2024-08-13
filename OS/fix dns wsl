@@ -1,0 +1,12 @@
+/etc/wsl.conf
+
+[network]
+generateResolvConf = false
+/etc/resolv.conf
+
+nameserver 8.8.8.8
+However, for some reason my resolv.conf keep getting recreated on every boot.
+
+So I had to make it immutable, like so:
+
+sudo chattr +i /etc/resolv.conf

@@ -1,0 +1,151 @@
+sudo apt update
+sudo apt upgrade
+sudo init 0
+
+//PHP + composer
+sudo apt install php8.1-{ldap,bcmath,common,ctype,curl,fileinfo,fpm,gd,iconv,intl,mbstring,mysql,soap,xml,xsl,zip,cli}
+sudo curl -sS https://getcomposer.org/installer -o composer-setup.php
+sudo sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+composer -V
+
+//Mariadb
+sudo apt install mariadb-server
+  mysql
+  CREATE DATABASE snipeit;
+  GRANT ALL ON snipeit.* TO snipeit@localhost identified by 'congachoi';
+  FLUSH PRIVILEGES;
+  \q
+
+//Nginx
+sudo apt install nginx
+nano /etc/nginx/sites-available/snipeit
+    server {
+            listen 80;
+            server_name snipeit.yourdomain.com;
+            root /var/www/html/snipe-it/public;
+            
+            index index.php;
+                    
+            location / {
+                    try_files $uri $uri/ /index.php?$query_string;
+
+            }
+            
+            location ~ \.php$ {
+            include fastcgi.conf;
+                    include snippets/fastcgi-php.conf;
+                    fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                include fastcgi_params;
+            }
+
+    }
+sudo ln -s /etc/nginx/sites-available/snipeit /etc/nginx/sites-enabled/
+
+//SnipeIT
+cd /var/www/html/
+sudo git clone https://github.com/snipe/snipe-it snipe-it
+sudo chown -R www-data: /var/www/html/snipe-it
+sudo chmod -R 755 /var/www/html/snipe-it
+cd snipe-it/
+sudo cp .env.example .env
+sudo nano .env
+    APP_URL=https://it-asset.intra.nttdata.com.vn
+    APP_TIMEZONE='Asia/Ho_Chi_Minh'
+    DB_DATABASE=snipeit
+    DB_USERNAME=snipeit
+    DB_PASSWORD=congachoi
+    MAIL_DRIVER=smtp
+    MAIL_HOST=email-smtp.us-west-2.amazonaws.com
+    MAIL_PORT=587
+    MAIL_USERNAME=YOURUSERNAME
+    MAIL_PASSWORD=YOURPASSWORD
+    MAIL_ENCRYPTION=null
+    MAIL_FROM_ADDR=you@example.com
+    MAIL_FROM_NAME='Snipe-IT'
+    MAIL_REPLYTO_ADDR=you@example.com
+    MAIL_REPLYTO_NAME='Snipe-IT'
+    MAIL_AUTO_EMBED_METHOD='attachment'
+sudo composer update --no-plugins --no-scripts
+sudo composer install --no-dev --prefer-source --no-plugins --no-scripts
+sudo php artisan key:generate
+cat .env
+sudo systemctl restart nginx
+
+//SSL
+sudo mkdir /etc/ssl/private
+sudo chmod 700 /etc/ssl/private
+sudo openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout /etc/ssl/private/nginx-selfsigned.key -out /etc/ssl/certs/nginx-selfsigned.crt
+    Country Name (2 letter code) [XX]:VN
+    State or Province Name (full name) []:Ha Noi
+    Locality Name (eg, city) [Default City]:Ha Noi
+    Organization Name (eg, company) [Default Company Ltd]:NTT DATA Inc
+    Organizational Unit Name (eg, section) []:IT Dept
+    Common Name (eg, your name or your server's hostname) []:SnipeIT App
+    Email Address []:minhpv@intra.nttdata.com.vn
+
+sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
+sudo nano /etc/nginx/sites-available/snipeit
+        server {
+            listen 80;
+            listen [::]:80;
+            server_name asset.intra.nttdata.com.vn;
+            return 301 https://$host$request_uri;
+        }
+
+        server {
+            listen 443 http2 ssl;
+            listen [::]:443 http2 ssl;
+
+            server_name asset.intra.nttdata.com.vn;
+
+            ssl_certificate /etc/ssl/certs/nginx-selfsigned.crt;
+            ssl_certificate_key /etc/ssl/private/nginx-selfsigned.key;
+            ssl_dhparam /etc/ssl/certs/dhparam.pem;
+
+            ########################################################################
+            # from https://cipherlist.eu/                                            #
+            ########################################################################
+
+            ssl_protocols TLSv1.3;# Requires nginx >= 1.13.0 else use TLSv1.2
+            ssl_prefer_server_ciphers on;
+            ssl_ciphers EECDH+AESGCM:EDH+AESGCM;
+            ssl_ecdh_curve secp384r1; # Requires nginx >= 1.1.0
+            ssl_session_timeout  10m;
+            ssl_session_cache shared:SSL:10m;
+            ssl_session_tickets off; # Requires nginx >= 1.5.9
+            ssl_stapling on; # Requires nginx >= 1.3.7
+            ssl_stapling_verify on; # Requires nginx => 1.3.7
+            resolver 192.168.8.6 192.168.8.1 valid=300s;
+            resolver_timeout 5s;
+            # Disable preloading HSTS for now.  You can use the commented out header line that includes
+            # the "preload" directive if you understand the implications.
+            #add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload";
+            add_header X-Frame-Options DENY;
+            add_header X-Content-Type-Options nosniff;
+            add_header X-XSS-Protection "1; mode=block";
+            ##################################
+            # END https://cipherlist.eu/ BLOCK #
+            ##################################
+
+            root /var/www/html/snipe-it/public;
+            index index.php;
+
+            location / {
+                    try_files $uri $uri/ /index.php?$query_string;
+
+            }
+
+            location ~ \.php$ {
+                    include fastcgi.conf;
+                    include snippets/fastcgi-php.conf;
+                    fastcgi_pass unix:/run/php/php8.1-fpm.sock;
+                    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                    include fastcgi_params;
+            }
+        }
+
+sudo nginx -t
+sudo systemctl restart nginx

@@ -1,0 +1,22 @@
+# no trust with CA
+sudo openssl req -x509 -nodes -days 730 -newkey rsa:2048 -keyout /etc/ssl/private/apache2-selfsigned.key -out /etc/ssl/certs/apache2-selfsigned.crt
+
+# trust with CA
+# Gen private key file and request file
+openssl req -newkey rsa:2048 -nodes -keyout private.key -out request.csr
+
+#Gen rootCA
+openssl req -x509 -sha256 -days 1825 -nodes -newkey rsa:2048 -keyout rootCA.key -out rootCA.crt
+
+#Tao content info.ext
+sudo nano info.ext
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:FALSE
+subjectAltName = @alt_names
+[alt_names]
+IP.1 = mail.nttdata.com.vn
+
+#Trust va gen cert .crt file
+openssl x509 -req -CA rootCA.crt -CAkey rootCA.key -in request.csr -out public.crt -days 730 -CAcreateserial -extfile info.ext
+
+https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi9hoTWhPv9AhUJXGwGHYK_B7kQFnoECB4QAQ&url=https%3A%2F%2Ftwo-oes.medium.com%2Freverse-proxy-ssl-ldap-for-docker-registry-805539daaa94&usg=AOvVaw3UC4ZJBDDnslWH-0jD1J02

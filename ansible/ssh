@@ -1,0 +1,6 @@
+ssh-keygen -t rsa
+ssh-copy-id -i ~/.ssh/id_rsa.pub minhpv@192.168.10.11
+
+# ubuntu turn off ask password when run command with sudo permission
+sudo visudo
+minhpv ALL=(ALL) NOPASSWD: ALL

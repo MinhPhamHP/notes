@@ -1,0 +1,22 @@
+
+#add more disk
+pvs
+pvcreate /dev/sdc
+pvs
+vgextend debian-vg /dev/sdc
+
+vgs
+lvextend -l +131071 /dev/vm006-vg/root
+df-h
+resize2fs /dev/vm006-vg/root
+
+#resize existing disk
+parted
+p
+resizepart 3
+pvresize /dev/sda3
+
+vgs
+lvextend -l +32576 /dev/debian-vg/root
+df-h
+resize2fs /dev/debian-vg/root
