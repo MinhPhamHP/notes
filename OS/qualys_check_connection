@@ -1,2 +1,0 @@
-curl https://qagpublic.qg2.apps.qualys.com/CloudAgent
-telnet qagpublic.qg2.apps.qualys.com/CloudAgent 443
