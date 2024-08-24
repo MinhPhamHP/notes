@@ -1,6 +1,6 @@
 # for ibus unikey
-sudo apt install ibus-unikey
-setting -> keyboard -> input source -> vietnamese unikey
+#sudo apt install ibus-unikey
+#setting -> keyboard -> input source -> vietnamese unikey
 
 # for ibus bambo
 sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
