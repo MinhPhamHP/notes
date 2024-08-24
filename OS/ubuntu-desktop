@@ -2,3 +2,10 @@ sudo apt install ibus-unikey
 setting -> keyboard -> input source -> vietnamese unikey
 # change keyboard switch mode typing
 setting -> keyboard -> view and custom -> typing.. -> switch to next ..
+
+#mount partiion ntfs of windows to ubuntu
+sudo mkdir windows
+sudo mkdir data
+sudo mount -t ntfs /dev/nvme0n1p3 /media/minhpv/windows
+sudo mount -t ntfs /dev/nvme0n1p8 /media/minhpv/data0
+sudo mount -t ntfs /dev/nvme0n1p5 /media/minhpv/data1
