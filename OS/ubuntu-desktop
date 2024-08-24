@@ -1,5 +1,14 @@
+# for ibus unikey
 sudo apt install ibus-unikey
 setting -> keyboard -> input source -> vietnamese unikey
+
+# for ibus bambo
+sudo add-apt-repository ppa:bamboo-engine/ibus-bamboo
+sudo apt update
+sudo apt install ibus-bamboo
+ibus restart
+setting -> keyboard -> input source -> vietnamese (Bambo)
+
 # change keyboard switch mode typing
 setting -> keyboard -> view and custom -> typing.. -> switch to next ..
 
