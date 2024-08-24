@@ -23,3 +23,6 @@ sudo mount -t ntfs /dev/nvme0n1p5 /media/minhpv/data1
 sudo nano /etc/fstab
 UUID=59148d4a-de4a-4661-89b2-589eebd11d32 /media/minhpv/data0 ext4 defaults 0 2
 #UUID=01DAF3E6ADD5AB60 /media/minhpv/data1 ntfs-3g defaults,uid=1000,gid=1000,dmask=022,fmask=133 0 0
+
+
+ok
