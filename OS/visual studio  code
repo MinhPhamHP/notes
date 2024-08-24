@@ -1,0 +1,11 @@
+#files.associations in settings.json:
+Ctrl + ,
+
+{
+    "json.schemas": [
+
+    ],
+    "files.associations": {
+    "*": "shellscript"
+    }
+}

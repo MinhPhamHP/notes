@@ -1,0 +1,4 @@
+sudo apt install ibus-unikey
+setting -> keyboard -> input source -> vietnamese unikey
+# change keyboard switch mode typing
+setting -> keyboard -> view and custom -> typing.. -> switch to next ..
