@@ -13,3 +13,6 @@
 
 [kubectl]
 192.168.10.14 ansible_port=22 ansible_user=minhpv ansible_ssh_private_key_file=/home/minhpv/.ssh/id_rsa
+
+[windows]
+192.168.10.15 ansible_port=3389 ansible_user=minhpv 
