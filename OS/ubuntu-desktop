@@ -25,10 +25,12 @@ UUID=59148d4a-de4a-4661-89b2-589eebd11d32 /media/minhpv/data0 ext4 defaults 0 2
 #UUID=01DAF3E6ADD5AB60 /media/minhpv/data1 ntfs-3g defaults,uid=1000,gid=1000,dmask=022,fmask=133 0 0
 
 #mount partiion ntfs of windows to Pc ubuntu
-sudo mkdir data0
-sudo mkdir data1
-sudo mount -t ntfs-3g /dev/nvme0n1p6 /media/minhpv/data0
-sudo mount -t ntfs-3g /dev/sda1 /media/minhpv/data1
+sudo mkdir /media/minhpv/data0
+sudo mkdir /media/minhpv/data1
+sudo mkdir /media/minhpv/data2
+sudo mount /dev/nvme0n1p4 /media/minhpv/data0
+sudo mount -t ntfs-3g /dev/nvme0n1p6 /media/minhpv/data1
+sudo mount -t ntfs-3g /dev/sda1 /media/minhpv/data2
 
 # auto mount with fstab PC ubuntu
 sudo nano /etc/fstab
