@@ -2,7 +2,7 @@
 # Virtualization manage: qemu
 # VM control: virt-manager
 egrep -c '(vmx|svm)' /proc/cpuinfo
-sudo apt install cpu-checker
+sudo apt install cpu-checker -y
 sudo kvm-ok
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils -y
 sudo adduser minhpv libvirt
@@ -11,5 +11,13 @@ sudo virsh list --all
 sudo systemctl status libvirtd
 sudo systemctl enable --now libvirtd
 sudo apt install virt-manager -y
+
 # run virt-manager
 sudo virt-manager
+
+# convert disk .vhdx to .qcow2
+sudo apt-get update
+sudo apt-get install qemu-utils
+qemu-img convert -f vhdx -O qcow2 source.vhdx destination.qcow2
+qemu-img info destination.qcow2
+
