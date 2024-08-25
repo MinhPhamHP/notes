@@ -32,5 +32,5 @@ sudo mount -t ntfs-3g /dev/sda1 /media/minhpv/data1
 
 # auto mount with fstab PC ubuntu
 sudo nano /etc/fstab
-UUID=01DAF575964FEC90 /media/minhpv/data0 ntfs-3g defaults 0 2
+UUID=c4c67d20-72e1-4671-abda-cd15ad6bb21b /media/minhpv/data0 ext4 defaults 0 2
 #UUID=BC572FF6BC572FF6 /media/minhpv/data1 ntfs-3g defaults,uid=1000,gid=1000,dmask=022,fmask=133 0 0
