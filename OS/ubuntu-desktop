@@ -28,9 +28,9 @@ UUID=59148d4a-de4a-4661-89b2-589eebd11d32 /media/minhpv/data0 ext4 defaults 0 2
 sudo mkdir data0
 sudo mkdir data1
 sudo mount -t ntfs-3g /dev/nvme0n1p6 /media/minhpv/data0
-sudo mount -t ntfs-3g /dev/sda /media/minhpv/data1
+sudo mount -t ntfs-3g /dev/sda1 /media/minhpv/data1
 
 # auto mount with fstab PC ubuntu
 sudo nano /etc/fstab
-UUID=59148d4a-de4a-4661-89b2-589eebd11d32 /media/minhpv/data0 ext4 defaults 0 2
-#UUID=01DAF3E6ADD5AB60 /media/minhpv/data1 ntfs-3g defaults,uid=1000,gid=1000,dmask=022,fmask=133 0 0
+UUID=01DAF575964FEC90 /media/minhpv/data0 ntfs-3g defaults 0 2
+#UUID=BC572FF6BC572FF6 /media/minhpv/data1 ntfs-3g defaults,uid=1000,gid=1000,dmask=022,fmask=133 0 0
