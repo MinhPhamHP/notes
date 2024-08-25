@@ -1,0 +1,15 @@
+# Hypervisor: kvm
+# Virtualization manage: qemu
+# VM control: virt-manager
+egrep -c '(vmx|svm)' /proc/cpuinfo
+sudo apt install cpu-checker
+sudo kvm-ok
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils -y
+sudo adduser minhpv libvirt
+sudo adduser minhpv kvm
+sudo virsh list --all
+sudo systemctl status libvirtd
+sudo systemctl enable --now libvirtd
+sudo apt install virt-manager -y
+# run virt-manager
+sudo virt-manager
