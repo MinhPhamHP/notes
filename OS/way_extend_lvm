@@ -1,4 +1,3 @@
-
 #add more disk
 pvs
 pvcreate /dev/sdc

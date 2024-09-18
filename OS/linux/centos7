@@ -104,5 +104,9 @@ yum install -y falcon-sensor-7.05.0-16004.el7.x86_64.rpm
 # install tomcat
 sudo useradd -m -U -d /opt/tomcat -s /bin/false tomcat
 
+# list all process with all param
+ps -efww
+ps -auxww
+
 # delete user
 # userdel -f -r redhat-user
