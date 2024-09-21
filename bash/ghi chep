@@ -1,0 +1,5 @@
+# Define variable, note: mustn't space around =
+name="Alice"
+
+# Print string, variable to screen
+echo "Hello, $name!"
