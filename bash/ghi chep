@@ -3,3 +3,8 @@ name="Alice"
 
 # Print string, variable to screen
 echo "Hello, $name!"
+echo "Today is $(date)"
+
+# Read data from keyboard, save to variable
+read -p "Please input your name: " name
+read -a names
