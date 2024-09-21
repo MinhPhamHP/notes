@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # nhap du lieu
 read -p "Nhap vao so thu nhat: " a 
