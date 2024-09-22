@@ -13,7 +13,7 @@ read -a names
 $((1+2))
 
 # Cau lenh dieu kien, phep toan so sanh
-if [ ax b ]; then
+if [ conditional ]; then
 else
 fi
 
@@ -36,3 +36,5 @@ Toán tử	Ý nghĩa
 !=	Không bằng (not equal)
 -z	Chuỗi rỗng (string is empty)
 -n	Chuỗi không rỗng (string is not empty)
+
+# Vong lap
