@@ -38,3 +38,7 @@ Toán tử	Ý nghĩa
 -n	Chuỗi không rỗng (string is not empty)
 
 # Vong lap
+
+# Mang
+my_array=(1 2 3 4 5)
+echo ${my_array[0]}
