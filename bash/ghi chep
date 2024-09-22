@@ -1,10 +1,38 @@
 # Define variable, note: mustn't space around =
 name="Alice"
 
-# Print string, variable to screen
+# Print string, value of variable to screen
 echo "Hello, $name!"
 echo "Today is $(date)"
 
 # Read data from keyboard, save to variable
 read -p "Please input your name: " name
 read -a names
+
+# Calculating
+$((1+2))
+
+# Cau lenh dieu kien, phep toan so sanh
+if [ ax b ]; then
+else
+fi
+
+1. So sanh so hoc
+Các toán tử so sánh số học được sử dụng để so sánh giá trị số.
+
+Toán tử	Ý nghĩa
+-eq	Bằng nhau (equal)
+-ne	Không bằng (not equal)
+-lt	Nhỏ hơn (less than)
+-le	Nhỏ hơn hoặc bằng
+-gt	Lớn hơn (greater than)
+-ge	Lớn hơn hoặc bằng
+
+2. So sánh chuỗi
+Các toán tử so sánh chuỗi được sử dụng để so sánh giá trị của các chuỗi ký tự.
+
+Toán tử	Ý nghĩa
+=	Bằng nhau (equal)
+!=	Không bằng (not equal)
+-z	Chuỗi rỗng (string is empty)
+-n	Chuỗi không rỗng (string is not empty)
