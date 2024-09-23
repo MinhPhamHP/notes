@@ -2,3 +2,6 @@ docker rm -vf $(docker ps -aq)
 docker rmi -f $(docker images -aq)
 docker volume rm $(docker volume ls -q --filter dangling=true)
 docker network rm `docker network ls -q`
+
+# Check each volume used by each container
+sudo docker inspect --format='{{.Name}} -> {{range .Mounts}}{{.Name}} {{end}}' $(sudo docker ps -aq)
