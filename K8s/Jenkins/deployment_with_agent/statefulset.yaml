@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: jenkins-sfs
+  namespace: devops-tools
+spec:
+  serviceName: "jenkins"
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-server
+  template:
+    metadata:
+      labels:
+        app: jenkins-server
+    spec:
+      serviceAccountName: jenkins-admin
+      securityContext:
+        fsGroup: 1000 
+        runAsUser: 1000
+      containers:
+        - name: jenkins
+#          image: jenkins/jenkins:lts
+          image: jenkins/jenkins:2.440.1-lts-jdk17
+          resources:
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+            requests:
+              memory: "500Mi"
+              cpu: "500m"
+          ports:
+            - name: httpport
+              containerPort: 8080
+            - name: jnlpport
+              containerPort: 50000
+          livenessProbe:
+            httpGet:
+              path: "/login"
+              port: 8080
+            initialDelaySeconds: 90
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 5
+          readinessProbe:
+            httpGet:
+              path: "/login"
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          volumeMounts:
+            - name: jenkins-data
+              mountPath: /var/jenkins_home
+  volumeClaimTemplates:
+    - metadata:
+        name: jenkins-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: "local-storage"
+        resources:
+          requests:
+            storage: 10Gi
