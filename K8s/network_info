@@ -6,10 +6,21 @@ Subnet access (physical)
 192.168.5.0/24
 
 HA Proxy
+Node01:
+# Public address
 192.168.20.10
-192.168.20.30
-VIP
 192.168.20.20
+
+# Private address
+192.168.10.10
+
+Node02:
+# Public address
+192.168.20.30
+192.168.20.20
+
+# Private address
+192.168.10.30
 
 k8s
 master
@@ -19,6 +30,7 @@ worker1
 worker2
 192.168.10.232
 
+# Node1
 /etc/netplan/50-cloud-init.yaml
 network:
     ethernets:
@@ -41,3 +53,28 @@ network:
               - to: 192.168.10.0/24
                 via: 192.168.10.1
     version: 2
+
+# Node2
+/etc/netplan/50-cloud-init.yaml
+network:
+    ethernets:
+        enp1s0:
+            dhcp4: no
+            dhcp6: no
+            addresses: [192.168.20.30/24]
+            nameservers:
+              addresses: [8.8.8.8, 8.8.1.1]
+            routes:
+              - to: 0.0.0.0/0
+                via: 192.168.20.1
+        enp2s0:
+            dhcp4: no
+            dhcp6: no
+            addresses: [192.168.10.30/24]
+            nameservers:
+              addresses: [8.8.8.8, 8.8.1.1]
+            routes:
+              - to: 192.168.10.0/24
+                via: 192.168.10.1
+    version: 2
+

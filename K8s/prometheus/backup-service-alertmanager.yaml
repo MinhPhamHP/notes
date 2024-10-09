@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: stable
+    meta.helm.sh/release-namespace: prometheus
+  creationTimestamp: "2024-03-08T00:10:02Z"
+  labels:
+    app: kube-prometheus-stack-alertmanager
+    app.kubernetes.io/instance: stable
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: kube-prometheus-stack
+    app.kubernetes.io/version: 56.6.2
+    chart: kube-prometheus-stack-56.6.2
+    heritage: Helm
+    release: stable
+    self-monitor: "true"
+  name: stable-kube-prometheus-sta-alertmanager
+  namespace: prometheus
+  resourceVersion: "3841762"
+  uid: de610c60-5cdd-44ee-801e-920c75091672
+spec:
+  clusterIP: 10.106.111.210
+  clusterIPs:
+  - 10.106.111.210
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http-web
+    port: 9093
+    protocol: TCP
+    targetPort: 9093
+  - appProtocol: http
+    name: reloader-web
+    port: 8080
+    protocol: TCP
+    targetPort: reloader-web
+  selector:
+    alertmanager: stable-kube-prometheus-sta-alertmanager
+    app.kubernetes.io/name: alertmanager
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

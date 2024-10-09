@@ -1,4 +1,7 @@
-sudo apt install keepalived
+# Haproxy01
+sudo apt install keepalived -y
+# /etc/keepalived/keepalived.conf
+
 vrrp_script haproxy-check {
     script "killall -0 haproxy"
     interval 2
@@ -8,21 +11,25 @@ vrrp_script haproxy-check {
 vrrp_instance kubernetes {
     state MASTER
     priority 100
-    interface eth0
+    interface enp1s0
     virtual_router_id 61
     advert_int 2
     authentication {
-        auth_type AH
-        auth_pass viettq
+        auth_type PASS
+        auth_pass pv.minh
     }
     virtual_ipaddress {
-        10.10.2.25/24
+        192.168.20.20/24
     }
 
     track_script {
         haproxy-check
     }
 }
+
+# Haproxy02
+sudo apt install keepalived -y
+# /etc/keepalived/keepalived.conf
 
 vrrp_script haproxy-check {
     script "killall -0 haproxy"
@@ -33,15 +40,15 @@ vrrp_script haproxy-check {
 vrrp_instance kubernetes {
     state BACKUP
     priority 99
-    interface eth0
+    interface enp1s0
     virtual_router_id 61
     advert_int 2
     authentication {
-        auth_type AH
-        auth_pass viettq
+        auth_type PASS
+        auth_pass pv.minh
     }
     virtual_ipaddress {
-        10.10.2.25/24
+        192.168.20.20/24
     }
 
     track_script {
@@ -52,9 +59,13 @@ vrrp_instance kubernetes {
 systemctl start keepalived
 systemctl enable keepalived
 
+# Haproxy01, haproxy02
 sudo apt -y install haproxy
-#config in all haproxy node
-sudo nano haproxy.conf
+
+# Config in all haproxy node, /etc/haproxy/haproxy.cfg
+sudo vi haproxy.cfg
+
+# Block global, default has preconfigured by haproxy
 
 listen stats
     bind *:8085
@@ -66,7 +77,12 @@ listen stats
 
 frontend http-in
     # listen on 80 port
-    bind *:80
+    bind 192.168.20.20:80
+
+    mode http
+    acl restricted_domain hdr(host) -i longhorn.local alertmanager.local prometheus.local grafana.local
+    http-request deny if restricted_domain
+
     # set default backend
     default_backend    backend_servers
     # send X-Forwarded-For header
@@ -77,5 +93,26 @@ backend backend_servers
     # balance with roundrobin
     balance            roundrobin
     # define backend servers
-    server             workernode 10.10.2.31:30080 check
-    server             workernode2 10.10.2.32:30080 check
+    server             worker1 192.168.10.230:30080 check
+    server             worker2 192.168.10.231:30080 check
+
+# Access domain longhorn, promethues, alertmanger, .. on NodePort IP in access instance
+
+vi /etc/hosts
+# worker1
+192.168.10.230 longhorn.local
+192.168.10.230 alertmanager.local
+192.168.10.230 prometheus.local
+192.168.10.230 grafana.local
+
+# worker2
+192.168.10.231 longhorn.local
+192.168.10.231 alertmanager.local
+192.168.10.231 prometheus.local
+192.168.10.231 grafana.local
+
+# proxy test
+#192.168.20.20 longhorn.local
+#192.168.20.20 alertmanager.local
+#192.168.20.20 prometheus.local
+#192.168.20.20 grafana.local
