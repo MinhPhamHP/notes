@@ -4,7 +4,7 @@ metadata:
   name: jenkins-sfs
   namespace: devops-tools
 spec:
-  serviceName: "jenkins"
+  serviceName: "jenkins-headless"
   replicas: 1
   selector:
     matchLabels:
@@ -24,16 +24,28 @@ spec:
           image: jenkins/jenkins:2.440.1-lts-jdk17
           resources:
             limits:
-              memory: "2Gi"
-              cpu: "1500m"
+              memory: "4Gi"
+              cpu: "2"
             requests:
-              memory: "500Mi"
-              cpu: "1000m"
+              memory: "2Gi"
+              cpu: "1"
           ports:
             - name: httpport
               containerPort: 8080
             - name: jnlpport
               containerPort: 50000
+          env:
+            - name: JAVA_OPTS
+              value: >
+                -Xms512m
+                -Xmx2g
+                -XX:+UseG1GC
+                -XX:MaxMetaspaceSize=512m
+                -XX:+UseAdaptiveSizePolicy
+                -XX:+HeapDumpOnOutOfMemoryError
+                -XX:HeapDumpPath=/var/jenkins_home
+                -XX:+UnlockDiagnosticVMOptions
+                -XX:NativeMemoryTracking=summary
           livenessProbe:
             httpGet:
               path: "/login"

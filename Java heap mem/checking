@@ -1,0 +1,38 @@
+# pmap -x 7
+7:   java -Duser.home=/var/jenkins_home -Djenkins.model.Jenkins.slaveAgentPort=50000 -Dhudson.lifecycle=hudson.lifecycle.ExitLifecycle -jar /usr/share/jenkins/jenkins.war
+00000000e0000000 263168K rw---   [ anon ]
+00000000f0100000 261120K -----   [ anon ]
+
+# jstat -gc 7
+
+S0C (Survivor 0 Capacity): Dung lượng của vùng Survivor 0 (trong kilobytes).
+S1C (Survivor 1 Capacity): Dung lượng của vùng Survivor 1 (trong kilobytes).
+S0U (Survivor 0 Utilization): Dung lượng hiện đang được sử dụng trong vùng Survivor 0 (trong kilobytes).
+S1U (Survivor 1 Utilization): Dung lượng hiện đang được sử dụng trong vùng Survivor 1 (trong kilobytes).
+EC (Eden Space Capacity): Dung lượng của vùng Eden (trong kilobytes).
+EU (Eden Space Utilization): Dung lượng đang sử dụng trong vùng Eden (trong kilobytes).
+OC (Old Generation Capacity): Dung lượng của vùng Old Generation (trong kilobytes).
+OU (Old Generation Utilization): Dung lượng đang sử dụng trong vùng Old Generation (trong kilobytes).
+MC (Metaspace Capacity): Tổng dung lượng của Metaspace (trong kilobytes).
+MU (Metaspace Utilization): Dung lượng đang sử dụng trong Metaspace (trong kilobytes).
+CCSC (Compressed Class Space Capacity): Dung lượng của Compressed Class Space (trong kilobytes).
+CCSU (Compressed Class Space Utilization): Dung lượng đang sử dụng trong Compressed Class Space (trong kilobytes).
+YGC (Young Generation GC Count): Số lần thực hiện garbage collection trong vùng Young Generation (bao gồm Eden và Survivor Spaces).
+YGCT (Young Generation GC Time): Tổng thời gian (tính theo giây) mà JVM đã dùng để thực hiện garbage collection trong vùng Young Generation.
+FGC (Full GC Count): Số lần thực hiện Full GC (garbage collection toàn bộ vùng heap, bao gồm Old Generation).
+FGCT (Full GC Time): Tổng thời gian (tính theo giây) mà JVM đã dùng để thực hiện Full GC.
+GCT (Total GC Time): Tổng thời gian (tính theo giây) mà JVM đã dùng để thực hiện mọi loại garbage collection (bao gồm cả Young và Full GC).
+
+# 20241010 14:20
+S0C         S1C         S0U         S1U          EC           EU           OC           OU          MC         MU       CCSC      CCSU     YGC     YGCT     FGC    FGCT     CGC    CGCT       GCT   
+0.0     124928.0         0.0     124928.0     1753088.0      1071104.0     1103872.0      274026.0    109888.0    107427.8   14080.0    12951.6     288     1.364     0     0.000    20     0.04     1.404
+
+
+ps -T -p 7 | wc -l
+
+top -H -p <PID>
+jmap -dump:live,format=b,file=heap_dump.hprof 7
+kubectl cp devops-tools/jenkins-sfs-0:/var/jenkins_home/heap_dump.hprof ./heap_dump.hprof
+
+jcmd 7 VM.native_memory summary
+jcmd 7 GC.heap_info
