@@ -1,10 +1,9 @@
-# pmap -x 7
+pmap -x 7
 7:   java -Duser.home=/var/jenkins_home -Djenkins.model.Jenkins.slaveAgentPort=50000 -Dhudson.lifecycle=hudson.lifecycle.ExitLifecycle -jar /usr/share/jenkins/jenkins.war
 00000000e0000000 263168K rw---   [ anon ]
 00000000f0100000 261120K -----   [ anon ]
 
-# jstat -gc 7
-
+jstat -gc 7
 S0C (Survivor 0 Capacity): Dung lượng của vùng Survivor 0 (trong kilobytes).
 S1C (Survivor 1 Capacity): Dung lượng của vùng Survivor 1 (trong kilobytes).
 S0U (Survivor 0 Utilization): Dung lượng hiện đang được sử dụng trong vùng Survivor 0 (trong kilobytes).
@@ -41,6 +40,9 @@ jcmd 7 GC.class_histogram
 
 # run GC now
 jcmd 7 GC.run
+
+# run GC from java code
+System.gc()
 
 # find object that will prepare GC
 jcmd 7 GC.finalizer_info
