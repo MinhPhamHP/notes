@@ -29,10 +29,18 @@ S0C         S1C         S0U         S1U          EC           EU           OC   
 
 
 ps -T -p 7 | wc -l
-
 top -H -p <PID>
+
 jmap -dump:live,format=b,file=heap_dump.hprof 7
 kubectl cp devops-tools/jenkins-sfs-0:/var/jenkins_home/heap_dump.hprof ./heap_dump.hprof
 
 jcmd 7 VM.native_memory summary
 jcmd 7 GC.heap_info
+jcmd 7 Thread.print
+jcmd 7 GC.class_histogram
+
+# run GC now
+jcmd 7 GC.run
+
+# find object that will prepare GC
+jcmd 7 GC.finalizer_info
