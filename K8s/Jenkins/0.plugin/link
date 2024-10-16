@@ -1,7 +1,12 @@
 https://updates.jenkins.io/download/plugins/blueocean-commons/1.27.11/blueocean-commons.hpi
 https://updates.jenkins.io/download/plugins/blueocean-rest-impl/1.27.11/blueocean-rest-impl.hpi
 
-    https://updates.jenkins.io/download/plugins/blueocean-rest/1.27.11/blueocean-rest.hpi
-    https://updates.jenkins.io/download/plugins/blueocean-web/1.27.11/blueocean-web.hpi
-    
+   # https://updates.jenkins.io/download/plugins/blueocean-rest/1.27.11/blueocean-rest.hpi
+   # https://updates.jenkins.io/download/plugins/blueocean-web/1.27.11/blueocean-web.hpi
+
+https://updates.jenkins.io/download/plugins/blueocean-pipeline-scm-api/1.27.11/blueocean-pipeline-scm-api.hpi
 https://updates.jenkins.io/download/plugins/blueocean-dashboard/1.27.11/blueocean-dashboard.hpi
+https://updates.jenkins.io/download/plugins/blueocean-i18n/1.27.11/blueocean-i18n.hpi
+https://updates.jenkins.io/download/plugins/blueocean-config/1.27.11/blueocean-config.hpi
+https://updates.jenkins.io/download/plugins/blueocean-personalization/1.27.11/blueocean-personalization.hpi
+https://updates.jenkins.io/download/plugins/blueocean-display-url/2.4.2/blueocean-display-url.hpi
