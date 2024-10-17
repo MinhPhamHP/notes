@@ -42,8 +42,6 @@ spec:
                 -XX:+UseG1GC
                 -XX:MaxMetaspaceSize=512m
                 -XX:+UseAdaptiveSizePolicy
-                -XX:MaxHeapFreeRatio=60
-                -XX:MinHeapFreeRatio=30
                 -XX:+HeapDumpOnOutOfMemoryError
                 -XX:HeapDumpPath=/var/jenkins_home
                 -XX:+UnlockDiagnosticVMOptions
