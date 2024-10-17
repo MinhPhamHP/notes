@@ -46,3 +46,6 @@ System.gc()
 
 # find object that will prepare GC
 jcmd 7 GC.finalizer_info
+
+-XX:MaxHeapFreeRatio=60
+-XX:MinHeapFreeRatio=30
