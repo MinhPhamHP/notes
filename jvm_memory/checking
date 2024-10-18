@@ -33,8 +33,13 @@ top -H -p <PID>
 jmap -dump:live,format=b,file=heap_dump.hprof 7
 kubectl cp devops-tools/jenkins-sfs-0:/var/jenkins_home/heap_dump.hprof ./heap_dump.hprof
 
+# show all jvm mem, committed heap mem
 jcmd 7 VM.native_memory summary
+# show committed heap mem, used of committed heap mem, young gen partition in used of committed heap mem
 jcmd 7 GC.heap_info
+# show all partition mem size, old gen partition in used of committed heap mem
+jstat -gc 7
+
 jcmd 7 Thread.print
 jcmd 7 GC.class_histogram
 
